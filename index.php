@@ -10,7 +10,9 @@
 <form action="" method="get" type="">
 
 <a href="formularios/crearNoticia.php">Crear noticia</a>
-<a href="formularios/leerNoticia.php">Ver noticia</a>
+<a href="formularios/elegirPerfil.php">Ver noticia</a>
+<a href="formularios/administrarNoticias.php">Administrar noticias</a>
+
 
 
 

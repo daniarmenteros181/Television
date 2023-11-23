@@ -20,7 +20,7 @@
         <input type="date" id="fecha_fin" name="fecha_fin" required>
 
         <label for="duracion">Duración:</label>
-        <input type="text" id="duracion" name="duracion" required>
+        <input type="number" id="duracion" name="duracion" required>
 
         <label for="prioridad">Prioridad:</label>
         <select id="prioridad" name="prioridad">
@@ -33,10 +33,17 @@
         <input type="text" id="titulo" name="titulo" required>
 
         <label for="perfil">Perfil:</label>
-        <input type="text" id="perfil" name="perfil" required>
+        <select id="perfil" name="perfil">
+            <option value="profesor">Profesor</option>
+            <option value="alumno">Alumno</option>
+        </select>
 
         <label for="tipo">Tipo:</label>
-        <input type="text" id="tipo" name="tipo" required>
+        <select id="tipo" name="tipo">
+            <option value="web">Web</option>
+            <option value="imagen">Imagen</option>
+            <option value="video">Video</option>
+        </select>
 
         <button type="submit">Crear Noticia</button>
     </form>
