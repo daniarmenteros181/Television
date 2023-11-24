@@ -44,10 +44,15 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titulo = $_POST['titulo'];
     $perfil = $_POST['perfil'];
     $tipo = $_POST['tipo'];
+    $web = $_POST['web'];
+    $imagen = $_POST['imagen'];
+    $video = $_POST['video'];
+
+
 
     try {
         // Código para crear la noticia en la base de datos
-        repositorioNoticia::crearNoticiaEnBaseDeDatos($fechaComienzo, $fechaFin, $duracion, $prioridad, $titulo, $perfil, $tipo);
+        repositorioNoticia::crearNoticiaEnBaseDeDatos($fechaComienzo, $fechaFin, $duracion, $prioridad, $titulo, $perfil, $tipo,$web,$imagen,$video);
         
         // Devolver una respuesta en formato JSON (puedes personalizar el formato según tus necesidades)
         header('Content-Type: application/json');

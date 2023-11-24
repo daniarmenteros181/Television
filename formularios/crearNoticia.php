@@ -39,14 +39,32 @@
         </select>
 
         <label for="tipo">Tipo:</label>
-        <select id="tipo" name="tipo">
+        <select id="tipo" name="tipo" onchange="mostrarCampoAdicional()">
             <option value="web">Web</option>
             <option value="imagen">Imagen</option>
             <option value="video">Video</option>
         </select>
 
+         <!-- Campo adicional para imagen -->
+         <div id="campoWeb" style="display: block;">
+            <label for="web">Web:</label>
+            <input type="text" id="web" name="web">
+        </div>
+
+         <!-- Campo adicional para imagen -->
+        <div id="campoImagen" style="display: none;">
+            <label for="imagen">URL de la Imagen:</label>
+            <input type="text" id="imagen" name="imagen">
+        </div>
+
+        <!-- Campo adicional para video -->
+        <div id="campoVideo" style="display: none;">
+            <label for="video">URL del Video:</label>
+            <input type="text" id="video" name="video">
+        </div>
+
         <button type="submit">Crear Noticia</button>
-    </form>
+    </form> 
 
 </body>
 

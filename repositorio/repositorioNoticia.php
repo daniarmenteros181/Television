@@ -141,14 +141,14 @@ public static function actualizarNoticia($idNoticia, $nuevoTitulo, $nuevaFechaCo
 
 
 
-public static function crearNoticiaEnBaseDeDatos($fechaComienzo, $fechaFin, $duracion, $prioridad, $titulo, $perfil, $tipo)
+public static function crearNoticiaEnBaseDeDatos($fechaComienzo, $fechaFin, $duracion, $prioridad, $titulo, $perfil, $tipo,$web,$imagen,$video)
 {
     try {
         $conexion = db::entrar();
 
         // Preparar la consulta SQL utilizando sentencias preparadas
-        $sql = "INSERT INTO noticias (fecha_comienzo, fecha_fin, duracion, prioridad, titulo, perfil, tipo)
-                VALUES (:fechaComienzo, :fechaFin, :duracion, :prioridad, :titulo, :perfil, :tipo)";
+        $sql = "INSERT INTO noticias (fecha_comienzo, fecha_fin, duracion, prioridad, titulo, perfil, tipo, web, imagen, video)
+                VALUES (:fechaComienzo, :fechaFin, :duracion, :prioridad, :titulo, :perfil, :tipo,:web,:imagen,:video)";
 
         $stmt = $conexion->prepare($sql);
 
@@ -160,6 +160,11 @@ public static function crearNoticiaEnBaseDeDatos($fechaComienzo, $fechaFin, $dur
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':perfil', $perfil);
         $stmt->bindParam(':tipo', $tipo);
+        $stmt->bindParam(':web', $web);
+        $stmt->bindParam(':imagen', $imagen);
+        $stmt->bindParam(':video', $video);
+
+
 
         // Ejecutar la consulta
         $stmt->execute();
